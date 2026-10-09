@@ -1,8 +1,9 @@
+```yaml
 services:
   - type: web
     name: unisphere
     runtime: docker
-    plan: starter
+    plan: free
     healthCheckPath: /api/health
     envVars:
       - key: UNISPHERE_SECRET
@@ -17,8 +18,10 @@ services:
           property: connectionString
       - key: PYTHONUNBUFFERED
         value: "1"
+
 databases:
   - name: unisphere-db
-    plan: basic-256mb
+    plan: free
     databaseName: unisphere
     user: unisphere
+```
